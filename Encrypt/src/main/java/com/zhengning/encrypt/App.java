@@ -13,7 +13,7 @@ public class App
         }
         //split the sentence by spaces.
         String[] string = input.split(" ");
-        
+
         //while loop until we heve single word left.
         while (string.length > 1){
             StringBuilder sb = new StringBuilder();
@@ -29,7 +29,7 @@ public class App
             string = sb.toString().split(" ");
         }
 
-        //if there is only one single word, this requires additional check
+        //if there is only one single word, then we encrypt the whole list once again
         if (string.length == 1) {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < string.length; i++) {
