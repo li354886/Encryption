@@ -13,16 +13,7 @@ public class App
         }
         //split the sentence by spaces.
         String[] string = input.split(" ");
-
-        //if there is only one single word, this requires additional check
-        if (string.length == 1) {
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < string.length; i++) {
-                sb.append(caesarEncrypt(string[i]));
-            }
-            string = sb.toString().split(" ");
-        }
-
+        
         //while loop until we heve single word left.
         while (string.length > 1){
             StringBuilder sb = new StringBuilder();
@@ -35,6 +26,15 @@ public class App
                 }
             }
             //reassign the new stringbuilder to string.
+            string = sb.toString().split(" ");
+        }
+
+        //if there is only one single word, this requires additional check
+        if (string.length == 1) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < string.length; i++) {
+                sb.append(caesarEncrypt(string[i]));
+            }
             string = sb.toString().split(" ");
         }
         //return first element in string array.
